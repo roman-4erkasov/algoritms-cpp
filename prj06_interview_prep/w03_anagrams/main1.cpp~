@@ -1,0 +1,43 @@
+#include<string>
+#include<algorithm>
+#include<list>
+#include<iostream>
+#include<map> 
+#include<iterator>
+#include<vector>
+
+int main(int argc, char *argv[]){
+  //TODO: const
+  if(argc>1){
+    std::map<char,unsigned> c2v;
+    unsigned char_qty=0;
+    for(char c='a';c<='z';++c) c2v[c]=char_qty++;
+    for(char c='A';c<='Z';++c) c2v[c]=char_qty++;
+    
+    std::cout<<char_qty<<"\n";
+    std::map<std::vector<unsigned>,std::list<std::string>> anagrams;
+    std::list<std::string> words(argv+1,argv+argc);
+    //std::map<std::string,std::list<std::string>> lists;
+    for(std::list<std::string>::iterator it=words.begin();it!=words.end();++it){
+      //std::cout<<*it<<"\n";
+      std::string word=*it;
+
+      std::vector<unsigned> wv(0,char_qty);
+      for(std::string::iterator c=it->begin();c!=it->end();++c)
+        wv[c2v[*c]]++;
+  
+      if (anagrams.find(wv)==anagrams.end()){
+        anagrams[wv]=std::list<std::string>({*it});
+      }
+      else{
+        anagrams[wv].push_back(*it);
+      }
+    }
+    for(std::map<std::vector<unsigned>,std::list<std::string>>::iterator it=anagrams.begin();it!=anagrams.end();++it){
+      //first_word=it->second.front();
+      auto next=std::next(it->second.begin());
+      if(next!=it->second.end()) std::cout<<it->second.front()<<"\n";
+    }
+  }
+}
+
