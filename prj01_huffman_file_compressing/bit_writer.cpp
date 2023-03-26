@@ -1,4 +1,4 @@
-#include"bit_writer.h"
+#include "bit_writer.h"
 
 void bit_writer::close_buffer() {
   if (!is_buff_free)

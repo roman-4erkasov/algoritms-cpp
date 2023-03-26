@@ -14,8 +14,8 @@ public:
   static void decompress(std::string compressed);
 private:
   static void print_tree(tree tr);
-  static const std::_Ios_Openmode READ_MODE;
-  static const std::_Ios_Openmode WRITE_MODE;
+  static const std::ios_base::openmode READ_MODE;
+  static const std::ios_base::openmode WRITE_MODE;
   static const std::string extention;
 };
 

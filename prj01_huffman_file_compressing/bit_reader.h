@@ -15,8 +15,8 @@ public:
       position = 0;
       if (in.get(buff).eof()) return -1;
     }
-    result=(buff>>7)&1;//берем старший бит
-    buff = buff << 1;//готовим к чтению следующий бит
+    result=(buff>>7)&1; // most significant bit
+    buff = buff << 1;// preparation to read the next bit
     position++;
     return result;
   }

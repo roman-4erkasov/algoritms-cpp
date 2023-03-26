@@ -1,7 +1,7 @@
 #include"compressor.h"
 
-const std::_Ios_Openmode compressor::READ_MODE = std::ios::binary | std::ios::in;
-const std::_Ios_Openmode compressor::WRITE_MODE = std::ios::binary | std::ios::out;
+const std::ios_base::openmode compressor::READ_MODE = std::ios::binary | std::ios::in;
+const std::ios_base::openmode compressor::WRITE_MODE = std::ios::binary | std::ios::out;
 const std::string compressor::extention = ".data";
 
 void compressor::print_tree(tree tr){

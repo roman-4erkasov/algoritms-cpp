@@ -1,2 +1,0 @@
-make:
-	g++ -std=c++11 main.cpp tree.h tree.cpp bit_reader.h bit_writer.h bit_writer.cpp char_counter.h compressor.h compressor.cpp -o huffman
